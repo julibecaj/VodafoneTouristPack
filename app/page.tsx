@@ -36,12 +36,28 @@ const packs = [
     duration: "7 days",
     features: ["5GB Data", "100 Minutes", "Unlimited SMS"],
   },
+  /**teste */
+  {
+     title: "Standard Pack",
+    subtitle: "Great for week-long stays",
+    price: "1000 L",
+    duration: "7 days",
+    features: ["5GB Data", "100 Minutes", "Unlimited SMS"],
+  },
+  {
+    title: "Standard Pack",
+    subtitle: "Great for week-long stays",
+    price: "1000 L",
+    duration: "7 days",
+    features: ["5GB Data", "100 Minutes", "Unlimited SMS"], 
+  },
+  
 ];
 
 export default function HomePage() {
   return (
     <div className="page">
-      <Header />
+      
 
       <main className="main">
         {/* Hero Section */}
@@ -84,7 +100,7 @@ export default function HomePage() {
         </div>
       </main>
 
-      <Footer />
+      
     </div>
   );
 }

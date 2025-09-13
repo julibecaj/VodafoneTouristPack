@@ -1,6 +1,8 @@
 "use client";
 import img from "./../public/assets/logo.webp";
 
+import Link from "next/link";
+
 import { useState } from "react";
 import Image from "next/image";
 
@@ -9,10 +11,11 @@ export default function Header() {
 
   const menuItems = [
     { name: "Mobile", href: "/" },
-    { name: "Fits & TV", href: "/fits-tv" },
-    { name: "eShop", href: "/eshop" },
-    { name: "Tourist Pack", href: "/tourist-pack" },
-    { name: "Support", href: "/support" },
+    { name: "Fits & TV", href: "/Fits&TV" },
+    { name: "eShop", href: "/eShop" },
+    { name: "Tourist Pack", href: "/TouristsPack" },
+    { name: "Support", href: "/Support" },
+    { name: "Log In", href:"/LogIn"}
   ];
 
   return (
@@ -31,7 +34,10 @@ export default function Header() {
         <nav className="nav">
           {menuItems.map((item) => (
             <ul key={item.name} className="nav-link">
-              {item.name}
+              {/* check this*/}
+              <Link href = {item.href} className = "nav-link">
+                {item.name}
+              </Link>
             </ul>
           ))}
         </nav>
@@ -39,7 +45,11 @@ export default function Header() {
         {/* Header Buttons */}
         <div className="header-buttons">
           <button className="header-button">🔍</button>
+          <div className="search-container">
+            <input type="text" placeholder="Search"/>
+          </div>
           <button className="header-button">🛒</button>
+          <Link href={"./LogIn"} className="profile-button">👤</Link>
           <button
             className="mobile-menu-button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

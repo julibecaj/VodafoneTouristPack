@@ -1,17 +1,17 @@
 const footerLinks = {
   company: [
-    { href: "/about", label: "About Us" },
-    { href: "/careers", label: "Careers" },
-    { href: "/news", label: "News" },
+    { href: "/About", label: "About Us" },
+    { href: "/Careers", label: "Careers" },
+    { href: "/News", label: "News" },
   ],
   services: [
-    { href: "/packages", label: "Packages" },
-    { href: "/roaming", label: "Roaming" },
+    { href: "/Packages", label: "Packages" },
+    { href: "/Roaming", label: "Roaming" },
     { href: "/internet", label: "Internet" },
   ],
   support: [
-    { href: "/support", label: "Help Center" },
-    { href: "/contact", label: "Contact" },
+    { href: "/Support", label: "Help Center" },
+    { href: "/Contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
   ],
   contact: [
