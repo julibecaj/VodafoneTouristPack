@@ -10,12 +10,12 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: "Mobile", href: "/" },
-    { name: "Fits & TV", href: "/Fits&TV" },
-    { name: "eShop", href: "/eShop" },
+    { name: "Home", href: "/" },
+    { name: "eShop", href: "/eShop/page" },
     { name: "Tourist Pack", href: "/TouristsPack" },
     { name: "Support", href: "/Support" },
-    { name: "Log In", href:"/LogIn"}
+    { name: "Log In", href:"/LogIn"},
+    { name: "Profile", href:"/User" },
   ];
 
   return (
@@ -49,7 +49,7 @@ export default function Header() {
             <input type="text" placeholder="Search"/>
           </div>
           <button className="header-button">🛒</button>
-          <Link href={"./LogIn"} className="profile-button">👤</Link>
+          <Link href={"./User"} className="profile-button">👤</Link>
           <button
             className="mobile-menu-button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
