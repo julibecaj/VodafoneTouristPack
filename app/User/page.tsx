@@ -1,15 +1,32 @@
 "use client"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-import React from "react"
-import { useState } from "react"
+import React, {useEffect, useState} from "react"
+
 import FlippableCard from "@/components/FlippableCard"
+import { getUserData } from "@/lib/api"
 
 export default function User(){
+    const [user, setUser] = useState<any>(null);
+
+    useEffect (() => {
+        const userId = localStorage.getItem("userId");
+        if(userId){
+            getUserData(Number(userId)).then(setUser);
+        }
+        
+       
+    }, []);
+    
+    if(!user) return <p>Loading...</p>
+    
     return(
         <div className="profile">
             <div className="userInfo">
-                <h1 className="user">Welcome, !</h1>
+                <h1 className="user">Welcome, {user ? user.username : "loading..."} !</h1>
+                <p>Email: {user.email}</p>
+                <p>Phone: {user.phone}</p>
+                
             </div>
             <div className="activeCards">
                 <h1 className="cards">Your active cards</h1>

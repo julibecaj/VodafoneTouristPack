@@ -2,16 +2,38 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
+import { registerUser } from "@/lib/api"; //api helper
+
+
 export default function Register() {
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you would handle registration logic (e.g., send data to API)
+    
     // await registerUser(...);
+    
+    const formData = new FormData(e.currentTarget);
 
-    // After registration, redirect to main page
-    router.push("/");
+    const userData = {
+      name: formData.get("name") as string,
+      surname: formData.get("surname") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      birthday: formData.get("birthday") as string,
+      username: formData.get("username") as string,
+      password: formData.get("password") as string,
+    };
+
+    try{
+      await registerUser(userData);
+      alert("Registration successful! Please Log In.")
+      router.push("/LogIn");
+    }catch (err){
+      alert("Registration failed: " + err);
+    }
+
+    
   };
 
   return (
