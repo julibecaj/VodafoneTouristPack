@@ -9,14 +9,13 @@ import { getUserData } from "@/lib/api"
 export default function User(){
     const [user, setUser] = useState<any>(null);
 
-    useEffect (() => {
+    useEffect(() => {
         const userId = localStorage.getItem("userId");
-        if(userId){
+        if (userId) {
             getUserData(Number(userId)).then(setUser);
         }
-        
-       
     }, []);
+
     
     if(!user) return <p>Loading...</p>
     

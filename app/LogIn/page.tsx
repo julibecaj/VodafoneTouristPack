@@ -15,9 +15,9 @@ export default function LogIn(){
 
         const loginData = {
             username: formData.get("username") as string,
-            phone: formData.get("phone") as string,
+            phone: formData.get("phone") as string, // <-- must match backend field name
             password: formData.get("password") as string
-        };
+        };  
         
 
         try{
